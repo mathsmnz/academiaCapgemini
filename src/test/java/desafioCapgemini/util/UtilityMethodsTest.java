@@ -1,4 +1,4 @@
-package desafioCapgemini.questoes;
+package desafioCapgemini.util;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

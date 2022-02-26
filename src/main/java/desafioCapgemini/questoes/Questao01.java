@@ -18,7 +18,7 @@ public class Questao01 {
         return retVal;
     }
 
-    public static boolean imprimeResposta(int input){
+    public static boolean q1ImprimeResultado(int input){
         if(input == 0){
             return false;
         }else{
