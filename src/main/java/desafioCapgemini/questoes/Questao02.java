@@ -57,6 +57,7 @@ public class Questao02 {
     public static void q2ImprimeResultado(String input, int modo){
         ArrayList<Integer> resultado = validaSenha(input);
 
+        //Possui dois modos, um detalhado e um simplificado seguindo o modelo pedido no desafio
         if(modo != 0){
             ArrayList<Boolean> validadores = new ArrayList<>(
                     Arrays.asList(

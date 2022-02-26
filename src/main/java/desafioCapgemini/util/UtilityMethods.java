@@ -1,6 +1,12 @@
 package desafioCapgemini.util;
 
 public class UtilityMethods {
+    /*
+    * preencheString eh responsavel por gerar uma nova string preenchida
+    * @param tgtSize - Tamanho desejado
+    * @param input - String de destino
+    * @param fill - char que sera usado para preencher
+    * @return retVal - String de retorno*/
     public static String preencheString(int tgtSize, String input, char fill){
 
         if(input.length() >= tgtSize){
