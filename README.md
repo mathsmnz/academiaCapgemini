@@ -85,3 +85,29 @@ Saída:
 Explicação:<br>
 
 A lista de todos os anagramas pares são: `[i, i], [q, q]` e `[ifa, fai]` que estão nas posições `[[0, 3]], [[8, 9]] e [[0, 1, 2], [1, 2, 3]]`.
+
+## Instalação
+1. Verifique a instalação do Maven em sua máquina usando o comando a baixo, caso dê erro, verifique a instalação e tente novamente
+```shell
+mvn -version
+```
+2. Faça uma cópia deste repositório com 
+```shell
+git clone https://github.com/mathsmnz/academiaCapgemini.git
+```
+3. Navege até o diretório do respositório
+```shell
+cd "academiaCapgemini"
+```
+4. Execute o comando de instalação do Maven, aguarde a Build e a execução dos testes
+```shell
+mvn clean instal
+```
+5. Navegue até o diretório onde foi realizada a criação do .jar
+```shell
+cd "target"
+```
+6. Execute o arquivo criado e use o programa a partir do terminal
+```shell
+java -jar DesafioCapgemini-1.0.jar
+```
