@@ -1,5 +1,7 @@
 package desafioCapgemini.util;
 
+import java.util.Scanner;
+
 public class UtilityMethods {
     /*
     * preencheString eh responsavel por gerar uma nova string preenchida
@@ -14,6 +16,7 @@ public class UtilityMethods {
         }else{
             StringBuilder retVal = new StringBuilder();
             int size = tgtSize - input.length();
+            //itera adicionando fill a string nova, depois adicionando a entrada a ela
             retVal.append(String.valueOf(fill).repeat(size));
             retVal.append(input);
             return retVal.toString();
@@ -38,7 +41,7 @@ public class UtilityMethods {
                 return 0;
             }else{
                 int retVal = 0;
-
+                //Itera a partir da entrada, fazendo verificacoes de acordo com o modo
                 for (int i = 0; i < input.length(); i++) {
                     char ch = input.charAt(i);
                     switch (mode){
@@ -75,5 +78,20 @@ public class UtilityMethods {
                 return retVal;
             }
         }
+    }
+
+    /*
+    * inputParser eh responsavel por lidar com entrada inteiros no programa
+    * e lidar com potenciais exceptions
+    * @param scan - Scanner com entrada
+    * @return retVal - int com resultado desejado, ou valor de fallback */
+    public static int inputParser(Scanner scan){
+        int retVal = 4;
+        try{
+            retVal = Integer.parseInt(scan.nextLine());
+        }catch (NumberFormatException e){
+            e.printStackTrace();
+        }
+        return retVal;
     }
 }
