@@ -5,7 +5,7 @@ import java.util.Scanner;
 import static desafioCapgemini.questoes.Questao01.q1ImprimeResultado;
 import static desafioCapgemini.questoes.Questao02.q2ImprimeResultado;
 import static desafioCapgemini.questoes.Questao03.q3ImprimeResultado;
-import static desafioCapgemini.util.UtilityMethods.inputParser;
+import static desafioCapgemini.util.UtilityMethods.*;
 
 public class Main {
     public static void main(String[] args) {
