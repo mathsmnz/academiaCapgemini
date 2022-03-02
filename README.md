@@ -6,91 +6,90 @@
 ![Maven](https://img.shields.io/badge/tool-maven-0440af.svg)
 ![badge-junit-jupiter](https://img.shields.io/badge/junit-jupiter-green.svg)
 
+>Acesso ao desafio 01 - [Desafio 01](https://github.com/mathsmnz/academiaCapgemini/tree/desafio-01)
 
-# Desafio de programação Academia Capgemini — 01
+# Desafio de programação Academia Capgemini — 02
 
 ## 1. Questões
 
 ### Questão 01
 
-Escreva um algoritmo que mostre na tela uma escada de tamanho n utilizando o caractere * e espaços. <br>A base e altura da escada devem ser iguais ao valor de n. A última linha não deve conter nenhum espaço. <br>
-
+A mediana de uma lista de números é basicamente o elemento que se encontra no meio da lista após a ordenação. 
+Dada uma lista de números com um número ímpar de elementos, desenvolva um algoritmo que encontre a mediana.
 #### Exemplo:<br>
 Entrada:
 ```
-n = 6
+arr = [9, 2, 1, 4, 6]
 ```
 Saída:
 ```
-     *
-    **
-   ***
-  ****
- *****
-******
+4
 ```
 
 ### Questão 02
 
-Débora se inscreveu em uma rede social para se manter em contato com seus amigos. <br> 
-A página de cadastro exigia o preenchimento dos campos de nome e senha, porém a senha precisa ser forte. <br> 
-O site considera uma senha forte quando ela satisfaz os seguintes critérios:<br>
-
-* Possui no mínimo 6 caracteres.
-* Contém no mínimo 1 digito.
-* Contém no mínimo 1 letra em minúsculo.
-* Contém no mínimo 1 letra em maiúsculo.
-* Contém no mínimo 1 caractere especial. Os caracteres especiais são: `!@#$%^&*()-+`
-
-
-Débora digitou uma string aleatória no campo de senha, porém ela não tem certeza se é uma senha forte. <br> 
-Para ajudar Débora, construa um algoritmo que informe qual é o número mínimo de caracteres que devem ser adicionados para uma string qualquer ser considerada segura.<br>
+Dado um vetor de inteiros n e um inteiro qualquer x. Construa um algoritmo que determine o número de elementos pares do vetor que tem uma diferença igual ao valor de x.
 
 #### Exemplo:<br>
 Entrada:
 ```
-Ya3
+
+n = [1, 5, 3, 4, 2]
 ```
 Saída: 
 ```
 3
 ```
 Explicação:<br>
-Ela pode tornar a senha segura adicionando 3 caracteres, por exemplo, &ab, transformando a senha em Ya3&ab. <br>
-2 caracteres não são suficientes visto que a senha precisa ter um tamanho mínimo de 6 caracteres.
+Existem 3 pares de inteiros no vetor com uma diferença de 2: `[5, 3]`, `[4, 2]` e `[3, 1]`.
 
 ### Questão 03
 
-Duas palavras podem ser consideradas anagramas de si mesmas se as letras de uma palavra podem ser realocadas para formar a outra palavra. <br>
-Dada uma string qualquer, desenvolva um algoritmo que encontre o número de pares de substrings que são anagramas.<br>
+Um texto precisa ser encriptado usando o seguinte esquema. 
+Primeiro, os espaços são removidos do texto. 
+Então, os caracteres são escritos em um grid, no qual as linhas e colunas tem as seguintes regras:
 
-#### Exemplo:<br>
+`sqrt(T) <= linha <= coluna <= sqrt(T)`
+
+#### Exemplos:<br>
 
 ##### Exemplo 1)
 Entrada:
 ```
-ovo
+s = tenha um bom dia
 ```
 Saída: 
 ```
-3
+taoa eum nmd hbi
 ```
 Explicação:<br>
 
-A lista de todos os anagramas pares são: `[o, o], [ov, vo]` que estão nas posições `[[0, 2], [0, 1], [1, 2]]` respectivamente.<br>
+Depois de remover os espaços, a string tem 13 caracteres.`sqrt(13)` está entre 3 e 4, então a string é rescrita na forma de um grid com 4 linhas e 4 colunas:
+```
+tenh
+aumb
+omdi
+a
+```
+O resultado é obtido ao mostrar os caracteres de cada coluna, com um espaço entre as colunas de texto. 
+A mensagem encriptada é obtida ao mostrar os caracteres de cada linha com um espaço entre as colunas.
 ##### Exemplo 2)
 Entrada: 
 ```
-ifailuhkqq
+s = ola mundo
 ````
 Saída: 
 ```
-3
+omd luo an
 ```
 Explicação:<br>
 
-A lista de todos os anagramas pares são: `[i, i], [q, q]` e `[ifa, fai]` que estão nas posições `[[0, 3]], [[8, 9]] e [[0, 1, 2], [1, 2, 3]]`.
-
+Depois de remover os espaços a string tem 8 caracteres.`sqrt(8)`está entre 2 e 3, então a string é reescrita na forma de um grid com 3 linhas e 3 colunas:
+```
+ola
+mun
+do
+```
 ## 2. Instalação
 1. Verifique a instalação do Maven em sua máquina usando o comando a baixo, caso dê erro, verifique a instalação e tente novamente
 ```shell
@@ -98,7 +97,7 @@ mvn -version
 ```
 2. Faça uma cópia deste repositório com 
 ```shell
-git clone https://github.com/mathsmnz/academiaCapgemini.git
+git clone -b desafio-02 https://github.com/mathsmnz/academiaCapgemini.git
 ```
 3. Navege até o diretório do respositório
 ```shell
