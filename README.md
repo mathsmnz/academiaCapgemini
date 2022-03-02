@@ -2,6 +2,9 @@
 ![Repo Size](https://img.shields.io/github/languages/code-size/mathsmnz/academiaCapgemini) 
 ![License](https://img.shields.io/github/license/mathsmnz/academiaCapgemini)
 ![Testes](https://github.com//mathsmnz/academiaCapgemini/actions/workflows/maven.yml/badge.svg)
+![JDK11](https://img.shields.io/badge/jdk%20version-11-red.svg)
+![Maven](https://img.shields.io/badge/tool-maven-0440af.svg)
+![badge-junit-jupiter](https://img.shields.io/badge/junit-jupiter-green.svg)
 
 
 # Desafio de programação Academia Capgemini — 01
