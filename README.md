@@ -6,6 +6,7 @@
 ![Maven](https://img.shields.io/badge/tool-maven-0440af.svg)
 ![badge-junit-jupiter](https://img.shields.io/badge/junit-jupiter-green.svg)
 
+>Acesso ao desafio 02 - [Desafio 02](https://github.com/mathsmnz/academiaCapgemini/tree/desafio-02)
 
 # Desafio de programação Academia Capgemini — 01
 
