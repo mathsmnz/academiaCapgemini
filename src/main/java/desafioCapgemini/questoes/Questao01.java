@@ -25,7 +25,7 @@ public class Questao01 {
         if(input != null && !(input.equals(""))){
             input = inputPreprocessor(input);
             if(!Objects.equals(input, "")){
-                ArrayList<Integer> printVal = stringArrayToInteger(inputTokanizer(input));
+                ArrayList<Integer> printVal = stringArrayToInteger(inputTokenizer(input));
                 if(!printVal.isEmpty()){
                     System.out.println("|| ====> " + calculaMediana(printVal));
                 }else{

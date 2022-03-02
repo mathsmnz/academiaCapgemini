@@ -7,7 +7,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class UtilityMethods {
-    public static ArrayList<String> inputTokanizer(String input){
+    public static ArrayList<String> inputTokenizer(String input){
         ArrayList<String> retVal = new ArrayList<>();
         //Garante que entrada seja nao nula e nao vazia
         if(input != null && !(input.equals(""))){

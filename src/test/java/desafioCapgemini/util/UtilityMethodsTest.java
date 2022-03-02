@@ -14,54 +14,54 @@ import static desafioCapgemini.util.UtilityMethods.*;
 
 public class UtilityMethodsTest {
     @Test
-    public void inputTokanizerRetornaVazioEntradaInvalida(){
+    public void inputTokenizerRetornaVazioEntradaInvalida(){
         ArrayList<String> esperado = new ArrayList<>();
 
-        Assertions.assertEquals(esperado, inputTokanizer("dfgkhjdsdkfghj[da"));
+        Assertions.assertEquals(esperado, inputTokenizer("dfgkhjdsdkfghj[da"));
 
-        Assertions.assertEquals(esperado, inputTokanizer("n = [5, 2, 12, 3]"));
+        Assertions.assertEquals(esperado, inputTokenizer("n = [5, 2, 12, 3]"));
 
-        Assertions.assertEquals(esperado, inputTokanizer("n=[1,45,69]"));
+        Assertions.assertEquals(esperado, inputTokenizer("n=[1,45,69]"));
 
-        Assertions.assertEquals(esperado, inputTokanizer("arr=[75,23,7,5,13]"));
+        Assertions.assertEquals(esperado, inputTokenizer("arr=[75,23,7,5,13]"));
     }
     @Test
-    public void inputTokanizerRetornaValorEsperadoEntradaValida(){
+    public void inputTokenizerRetornaValorEsperadoEntradaValida(){
         ArrayList<String> esperado = new ArrayList<>(
                 Arrays.asList("1","2","3","4")
         );
         String testString = inputPreprocessor("arr = [1, 2, 3, 4]");
-        Assertions.assertEquals(esperado, inputTokanizer(testString));
+        Assertions.assertEquals(esperado, inputTokenizer(testString));
         esperado = new ArrayList<>(
                 Arrays.asList("5","2","12","3")
         );
 
         testString =  inputPreprocessor("n = [5, 2, 12, 3]");
-        Assertions.assertEquals(esperado, inputTokanizer(testString));
+        Assertions.assertEquals(esperado, inputTokenizer(testString));
         esperado = new ArrayList<>(
                 Arrays.asList("1","45","69")
         );
 
         testString = inputPreprocessor("n=[1,45,69]");
-        Assertions.assertEquals(esperado, inputTokanizer(testString));
+        Assertions.assertEquals(esperado, inputTokenizer(testString));
         esperado = new ArrayList<>(
                 Arrays.asList("75","23","7","5","13")
         );
 
         testString = inputPreprocessor("arr=[75,23,7,5,13]");
-        Assertions.assertEquals(esperado, inputTokanizer(testString));
+        Assertions.assertEquals(esperado, inputTokenizer(testString));
     }
 
     @Test
-    public void inputTokanizerRetornaVazioEntradaVazia() {
+    public void inputTokenizerRetornaVazioEntradaVazia() {
         ArrayList<String> esperado = new ArrayList<>();
-        Assertions.assertEquals(esperado, inputTokanizer(""));
+        Assertions.assertEquals(esperado, inputTokenizer(""));
     }
 
     @Test
-    public void inputTokanizerRetornaVazioEntradaNula() {
+    public void inputTokenizerRetornaVazioEntradaNula() {
         ArrayList<String> esperado = new ArrayList<>();
-        Assertions.assertEquals(esperado, inputTokanizer(null));
+        Assertions.assertEquals(esperado, inputTokenizer(null));
     }
 
     @Test
