@@ -13,6 +13,9 @@ import java.util.Scanner;
 import static desafioCapgemini.util.UtilityMethods.*;
 
 public class UtilityMethodsTest {
+    String pattern = "\\[([0-9,\\s]*?)\\]";
+    int group = 1;
+
     @Test
     public void inputTokenizerRetornaVazioEntradaInvalida(){
         ArrayList<String> esperado = new ArrayList<>();
@@ -30,25 +33,25 @@ public class UtilityMethodsTest {
         ArrayList<String> esperado = new ArrayList<>(
                 Arrays.asList("1","2","3","4")
         );
-        String testString = inputPreprocessor("arr = [1, 2, 3, 4]");
+        String testString = inputPreprocessor("arr = [1, 2, 3, 4]", pattern, group);
         Assertions.assertEquals(esperado, inputTokenizer(testString));
         esperado = new ArrayList<>(
                 Arrays.asList("5","2","12","3")
         );
 
-        testString =  inputPreprocessor("n = [5, 2, 12, 3]");
+        testString =  inputPreprocessor("n = [5, 2, 12, 3]", pattern, group);
         Assertions.assertEquals(esperado, inputTokenizer(testString));
         esperado = new ArrayList<>(
                 Arrays.asList("1","45","69")
         );
 
-        testString = inputPreprocessor("n=[1,45,69]");
+        testString = inputPreprocessor("n=[1,45,69]", pattern, group);
         Assertions.assertEquals(esperado, inputTokenizer(testString));
         esperado = new ArrayList<>(
                 Arrays.asList("75","23","7","5","13")
         );
 
-        testString = inputPreprocessor("arr=[75,23,7,5,13]");
+        testString = inputPreprocessor("arr=[75,23,7,5,13]", pattern, group);
         Assertions.assertEquals(esperado, inputTokenizer(testString));
     }
 
@@ -67,35 +70,35 @@ public class UtilityMethodsTest {
     @Test
     public void inputPreprocessorRetornaValorEsperadoEntradaInvalida(){
         String esperado = "";
-        Assertions.assertEquals("123", inputPreprocessor("opa = [123] =sdfklhj;fgh][[sdgfhjfgh123,,,85dfghgfsfg]sdfgsdfgsfgs"));
-        Assertions.assertEquals("9,2,1,4,6", inputPreprocessor("arr = [9, 2, 1, 4, 6][bdc][1234]"));
-        Assertions.assertEquals(esperado, inputPreprocessor("asldfkgsacvuhsr"));
-        Assertions.assertEquals(esperado, inputPreprocessor("[][123]"));
+        Assertions.assertEquals("123", inputPreprocessor("opa = [123] =sdfklhj;fgh][[sdgfhjfgh123,,,85dfghgfsfg]sdfgsdfgsfgs", pattern, group));
+        Assertions.assertEquals("9,2,1,4,6", inputPreprocessor("arr = [9, 2, 1, 4, 6][bdc][1234]", pattern, group));
+        Assertions.assertEquals(esperado, inputPreprocessor("asldfkgsac[123abc]vuhsr", pattern, group));
+        Assertions.assertEquals(esperado, inputPreprocessor("[][123]", pattern, group));
     }
 
     @Test
     public void inputPreprocessorRetornaValorEsperadoEntradaValida(){
         String esperado = "1,2,3,4";
-        Assertions.assertEquals(esperado, inputPreprocessor("arr = [1, 2, 3, 4]"));
+        Assertions.assertEquals(esperado, inputPreprocessor("arr = [1, 2, 3, 4]", pattern, group));
 
         esperado = "5,2,12,3";
-        Assertions.assertEquals(esperado, inputPreprocessor("n = [5, 2, 12, 3]"));
+        Assertions.assertEquals(esperado, inputPreprocessor("n = [5, 2, 12, 3]", pattern, group));
 
         esperado = "1,45,69";
-        Assertions.assertEquals(esperado, inputPreprocessor("n=[1,45,69]"));
+        Assertions.assertEquals(esperado, inputPreprocessor("n=[1,45,69]", pattern, group));
 
         esperado = "75,23,7,5,13";
-        Assertions.assertEquals(esperado, inputPreprocessor("arr=[75,23,7,5,13]"));
+        Assertions.assertEquals(esperado, inputPreprocessor("arr=[75,23,7,5,13]", pattern, group));
     }
 
     @Test
     public void inputPreprocessorRetornaVazioEntradaNula(){
-        Assertions.assertEquals("", inputPreprocessor(null));
+        Assertions.assertEquals("", inputPreprocessor(null, pattern, group));
     }
 
     @Test
     public void inputPreprocessorRetornaVazioEntradaVazia(){
-        Assertions.assertEquals("", inputPreprocessor(""));
+        Assertions.assertEquals("", inputPreprocessor("", pattern, group));
     }
     
     @Test

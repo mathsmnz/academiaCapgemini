@@ -25,14 +25,21 @@ public class Main {
                 case 0:
                     System.out.println("|| ===> Saindo do programa");
                     break;
-                case 1:
+                case 1: {
+                    System.out.println("|| ====> Insira a entrada entre [], seguindo a notacao \"arr = [1 , 2 , 3]\"");
                     System.out.print("|| ===> Insira sua entrada:");
-                    q1ImprimeResultado(scan.nextLine());
+                    String s = scan.nextLine();
+                    q1ImprimeResultado(s);
                     break;
-                case 2:
+                }
+                case 2:{
+                    System.out.println("|| ====> Insira a entrada entre [], seguindo a notacao \"n = [1 , 2 , 3]\"");
                     System.out.print("|| ===> Insira sua entrada:");
-                    q2ImprimeResultado(scan.nextLine());
+                    String s = scan.nextLine();
+                    System.out.println(s);
+                    q2ImprimeResultado(s);
                     break;
+                }
                 case 3:
                     System.out.print("|| ===> Insira sua entrada:");
                     q3ImprimeResultado(scan.nextLine());

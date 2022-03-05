@@ -12,6 +12,7 @@ public class UtilityMethods {
         //Garante que entrada seja nao nula e nao vazia
         if(input != null && !(input.equals(""))){
             //Verifica se a entrada contem apenas numeros e virgula
+            input = input.replaceAll("[\\[\\]]", "");
             if(input.replaceAll("[0-9,]", "").equals("")){
                 retVal = new ArrayList<>(
                         Arrays.asList(input.split(","))
@@ -21,19 +22,17 @@ public class UtilityMethods {
         return retVal;
     }
 
-    public static String inputPreprocessor(String input){
+    public static String inputPreprocessor(String input, String p, int group){
         String retVal = "";
         //Garante que entrada seja nao nula e nao vazia
         if(input != null && !(input.equals(""))){
             //Cria padrao de RegEx para o processamento da entrada
-            Pattern pattern = Pattern.compile("\\[[0-9,\\s]*?\\]");
+            Pattern pattern = Pattern.compile(p);
             Matcher matcher = pattern.matcher(input);
 
-            //Se encontrar algo extrai a primeira ocorrencia, removendo depois, tudo que
-            //nao for necessario
+            //Se encontrar algo extrai a primeira ocorrencia,e depois limpa o resultado
             if(matcher.find()){
-                retVal = matcher.group();
-                retVal = retVal.replaceAll("[\\s\\[\\]]","");
+                retVal = matcher.group(group).replaceAll("[\\s]","");
             }
         }
 
